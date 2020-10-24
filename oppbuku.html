@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPP BUKU</title>
+</head>
+<body>
+    <p id="hasil"></p>
+    <script>
+        class Perpus {
+            constructor(id,nama,pengarang){
+                this.id = id;
+                this.nama = nama;
+                this.pengarang = pengarang;
+            }
+            
+            get getid(){
+                return `id buku ini adalah ${this.id}`
+            }
+            get getnama(){
+                return `nama buku ini adalah ${this.nama}`
+            }
+            get getpengarang(){
+                return `pengarang buku ini adalah ${this.pengarang}`
+            }
+
+            tampil() {
+                return `
+                    <hr>
+                    <p>ID: ${this.id}</p>
+                    <p>Nama Buku: ${this.nama}</p>
+                    <p>Nama Pengarang: ${this.pengarang}</p>
+                `
+            }
+
+        }
+
+        const buku1 = new Perpus(001,'belajar node js','hudhori')
+        const buku2 = new Perpus(002,'belajar react js','hadi')
+
+        document.getElementById('hasil').innerHTML = buku1.tampil() + buku2.tampil()
+    </script>
+</body>
+</html>

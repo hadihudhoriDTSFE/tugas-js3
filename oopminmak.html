@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>min maks</title>
+</head>
+<body>
+    <p id="hasil"></p>
+
+    <script>
+        class Bilangan {
+            nilaiMin(){
+                let pembanding = arguments[0]
+                for(let i=1;i<arguments.length;i++){
+                    if(pembanding<arguments[i]){
+                        pembanding = pembanding
+                    } else {
+                        pembanding = arguments[i]
+                    }
+                }
+                return pembanding
+            }
+            nilaiMaks(){
+                let pembanding = arguments[0]
+                for(let i=1;i<arguments.length;i++){
+                    if(pembanding>arguments[i]){
+                        pembanding = pembanding
+                    } else {
+                        pembanding = arguments[i]
+                    }
+                }
+                return pembanding
+            }
+            tampilkan(...arg){
+                return `
+                <p>nilai min ${this.nilaiMin(...arg)}</p>
+                <p>nilai maks ${this.nilaiMaks(...arg)}</p>
+                `
+            }
+        }
+
+        const Angka = new Bilangan
+
+         document.getElementById('hasil').innerHTML = Angka.tampilkan(29,4,54,12,67,7)
+    </script>
+</body>
+</html>

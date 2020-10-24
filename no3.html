@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nomer 3</title>
+</head>
+<body>
+    <script>
+        function jumlah(jlmh){
+            const jum = jlmh
+            const total = function (){
+                return jum * 14000
+            }
+            this.totalBiaya = function (){
+                return total()
+            }
+        }
+        const hari = new jumlah(4)
+        //console.log(hari.totalBiaya())
+
+        class Kendaraan {
+            constructor(nopol,manufaktur){
+                this.nopol = nopol;
+                this.manufaktur = manufaktur;
+            }
+
+            info(){
+                console.log(`Kendaraan ini nomer polisinya adalh ${this.nopol} `);
+                console.log(`Kendaraan ini pabrikan ${this.manufaktur} `);
+            }
+
+            parkir(){
+                console.log(`kendaraaan bernomer polisi ${this.nopol} sedang parkir`);
+            }
+        }
+
+        class Mobil extends Kendaraan {
+            constructor(nopol,manufaktur,roda){
+                super(nopol,manufaktur);
+                this.roda = roda;
+            }
+
+            maju(){
+                console.log(`Mobil dengan nopol ${this.nopol} sedang melaju`)
+            }
+
+            bukaPintu(){
+                console.log(`pintu terbuka`)
+            }
+
+            info(){
+                super.info();
+                console.log(`jumlah roda mobil ini adalah ${this.roda}`);
+            }
+        }
+
+        const Mobilio = new Mobil('AA 1649 HE','HONDA',4)
+
+       // Mobilio.info()
+
+        class Trans {
+            constructor(nama){
+                this.nama = nama
+            }
+
+            jalur(){
+                console.log(`${this.nama} pergi dengan jalur darat`)
+            }
+        }
+
+        class Orang extends Trans {
+            constructor(nama){
+                super(nama);
+            }
+
+            jalur(){
+                console.log(`${this.nama} pergi dengan jalur laut`)
+            }
+        }
+
+        const Hadi = new Orang('hadi')
+
+        Hadi.jalur()
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
